@@ -1,8 +1,8 @@
-package com.itim.app.model.reader;
+package com.itim.app.reader;
 
 public abstract class StudySession {
 
     private final long sourceId;
-    private final ContentWi
+    // private final ContentWi
 
 }

@@ -6,10 +6,24 @@ import androidx.room.PrimaryKey;
 
 import java.util.Objects;
 
-@Entity(
-        tableName = "DisplaySettings"
-)
+@Entity(tableName = "DisplaySettings")
 public final class DisplaySettings {
+
+    public enum FontFamily {
+
+        TAAMEY_FRANK,
+        EZRA,
+        NOTO_SANS
+
+    }
+
+    public enum TextMarks {
+
+        ALL,
+        NIKUD,
+        NONE
+
+    }
 
     public static final int SINGLETON_ID = 1;
     public static final int MIN_FONT_SIZE = 14;
@@ -28,11 +42,13 @@ public final class DisplaySettings {
     private final TextMarks textMarks;
 
     public DisplaySettings(int id, int fontSize, @NonNull FontFamily fontFamily, @NonNull TextMarks textMarks) {
-        if (id != SINGLETON_ID) throw new IllegalArgumentException(
-                "DisplaySettings is a singleton, id must be " + SINGLETON_ID + " but was " + id);
-        if (!isValidFontSize(fontSize)) throw new IllegalArgumentException(
-                "fontSize must be " + MIN_FONT_SIZE + ".." + MAX_FONT_SIZE
-                + " in steps of " + FONT_SIZE_STEP + " but was " + fontSize);
+        if (id != SINGLETON_ID)
+            throw new IllegalArgumentException(
+                    "DisplaySettings is a singleton, id must be " + SINGLETON_ID + " but was " + id);
+        if (!isValidFontSize(fontSize))
+            throw new IllegalArgumentException(
+                    "fontSize must be " + MIN_FONT_SIZE + ".." + MAX_FONT_SIZE
+                            + " in steps of " + FONT_SIZE_STEP + " but was " + fontSize);
         this.id = id;
         this.fontSize = fontSize;
         this.fontFamily = fontFamily;
@@ -40,11 +56,11 @@ public final class DisplaySettings {
     }
 
     @NonNull
-    public static DisplaySettings defaults(){
+    public static DisplaySettings defaults() {
         return new DisplaySettings(SINGLETON_ID, DEFAULT_FONT_SIZE, DEFAULT_FONT_FAMILY, DEFAULT_TEXT_MARKS);
     }
 
-    public static boolean isValidFontSize (int fontSize) {
+    public static boolean isValidFontSize(int fontSize) {
         return fontSize >= 20 && fontSize <= 40 && (fontSize - MAX_FONT_SIZE) % FONT_SIZE_STEP == 0;
     }
 
@@ -68,9 +84,11 @@ public final class DisplaySettings {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass())
+            return false;
         DisplaySettings that = (DisplaySettings) o;
-        return id == that.id && fontSize == that.fontSize && fontFamily == that.fontFamily && textMarks == that.textMarks;
+        return id == that.id && fontSize == that.fontSize && fontFamily == that.fontFamily
+                && textMarks == that.textMarks;
     }
 
     @Override
