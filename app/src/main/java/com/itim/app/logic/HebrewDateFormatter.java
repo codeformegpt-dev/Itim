@@ -1,6 +1,8 @@
-package com.itim.app.model.hebrew;
+package com.itim.app.logic;
 
 import androidx.annotation.NonNull;
+
+import com.itim.app.model.hebrew.HebrewDate;
 
 import java.util.Collections;
 import java.util.HashMap;
