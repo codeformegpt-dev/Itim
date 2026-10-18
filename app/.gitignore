@@ -1,1 +1,31 @@
-/build
+# Gradle
+.gradle/
+build/
+**/build/
+
+# קונפיגורציה מקומית (נתיב ה-SDK שלך, לא רלוונטי לאחרים)
+local.properties
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+.navigation/
+
+# מפתחות חתימה (לעולם לא להעלות!)
+*.jks
+*.keystore
+keystore.properties
+
+# APK / AAB שנבנו
+*.apk
+*.aab
+
+# לוגים
+*.log
+
+# קבצי מערכת הפעלה
+.DS_Store
+Thumbs.db
