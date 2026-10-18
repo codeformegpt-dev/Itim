@@ -19,7 +19,7 @@ import java.util.Objects;
                     @Index(value = {"sourceId", "name"}, unique = true),
         }
 )
-public class Commentator {
+public final class Commentator {
 
     @PrimaryKey
     private final long id;

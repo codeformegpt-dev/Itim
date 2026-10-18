@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
         tableName = "source",
         indices  = {@Index(value = "label", unique = true)}
 )
-public class Source {
+public final class Source {
     @PrimaryKey
     private final long id;
 

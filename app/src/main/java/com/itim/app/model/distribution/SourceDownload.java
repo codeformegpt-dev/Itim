@@ -20,7 +20,7 @@ import java.util.Objects;
                         onDelete = ForeignKey.CASCADE
                     )
 )
-public class SourceDownload {
+public final class SourceDownload {
 
     @PrimaryKey
     private final long sourceId;

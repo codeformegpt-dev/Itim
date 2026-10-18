@@ -21,7 +21,7 @@ import java.util.Objects;
                 onDelete = ForeignKey.SET_NULL
         )
 )
-public class WidgetConfig {
+public final class WidgetConfig {
 
     @PrimaryKey
     private final int id;

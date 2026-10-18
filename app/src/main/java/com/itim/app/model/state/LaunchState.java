@@ -22,7 +22,7 @@ import java.util.Objects;
         indices = @Index("sourceId")
 
 )
-public class LaunchState {
+public final class LaunchState {
 
     @PrimaryKey
     private final long id;

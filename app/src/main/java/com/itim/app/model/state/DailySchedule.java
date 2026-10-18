@@ -22,7 +22,7 @@ import java.util.Objects;
                     ),
         indices = @Index("sourceId")
 )
-public class DailySchedule {
+public final class DailySchedule {
     @PrimaryKey
     private final long id;
     private final long sourceId;

@@ -38,7 +38,7 @@ import java.util.Objects;
                 @Index("title")
         }
 )
-public class SourceSchedule {
+public final class SourceSchedule {
 
     @PrimaryKey
     private final long id;

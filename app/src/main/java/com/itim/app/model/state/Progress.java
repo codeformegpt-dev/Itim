@@ -32,7 +32,7 @@ import java.util.Objects;
                 @Index("componentId")
         }
 )
-public class Progress {
+public final class Progress {
     @PrimaryKey
     private final long id;
     private final Mode mode;

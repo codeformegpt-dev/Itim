@@ -31,7 +31,7 @@ import java.util.Objects;
                     @Index("title")
         }
 )
-public class Commentary {
+public final class Commentary {
 
     @PrimaryKey
     private final long id;

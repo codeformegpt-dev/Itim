@@ -29,7 +29,7 @@ import java.util.Objects;
                      @Index("parentId")
         }
 )
-public class Component {
+public final class Component {
 
     @PrimaryKey
     private final long id;
