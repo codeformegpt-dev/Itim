@@ -3,11 +3,16 @@ package com.itim.app.model.hebrew;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
 /**
- * בדיקות שלא נוגעות ב-android.icu. ההמרות לגרגוריאני ואורך החודש נבדקים ב-HebrewDateInstrumentedTest
- * (androidTest), כי ב-unit test רגיל ה-android.jar הוא stub שזורק "not mocked".
+ * הבנאי בודק את אורך החודש דרך android.icu, וב-unit test רגיל ה-android.jar הוא stub שזורק "not mocked".
+ * לכן הבדיקות רצות עם Robolectric, שמספק android.icu אמיתי. ההמרות לגרגוריאני נבדקות ב-HebrewDateInstrumentedTest.
  */
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = 35)
 public class HebrewDateTest {
 
     @Test
@@ -28,6 +33,11 @@ public class HebrewDateTest {
     @Test
     public void constructorAcceptsBounds() {
         new HebrewDate(1, 1, 1);
+        new HebrewDate(5787, 14, 29); // אדר ב' תמיד 29 יום
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void constructorRejectsDay30InAdarB() {
         new HebrewDate(5787, 14, 30);
     }
 

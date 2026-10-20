@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.room.common)
     implementation(libs.room.runtime)
     testImplementation(libs.junit)
+    testImplementation(libs.robolectric)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
     annotationProcessor(libs.room.compiler)

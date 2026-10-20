@@ -1,6 +1,7 @@
 package com.itim.app.model.distribution;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -83,5 +84,18 @@ public final class SourceDownload {
     @Override
     public int hashCode() {
         return Objects.hash(sourceId, installedVersion, targetVersion, totalParts, completedParts, lastCheckedAt);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "SourceDownload{" +
+                "sourceId=" + sourceId +
+                ", installedVersion=" + installedVersion +
+                ", targetVersion=" + targetVersion +
+                ", totalParts=" + totalParts +
+                ", completedParts=" + completedParts +
+                ", lastCheckedAt=" + lastCheckedAt +
+                '}';
     }
 }

@@ -89,4 +89,17 @@ public final class Commentary {
     public int hashCode() {
         return Objects.hash(id, componentId, commentatorId, title, orderIndex, text);
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Commentary{" +
+                "id=" + id +
+                ", componentId=" + componentId +
+                ", commentatorId=" + commentatorId +
+                ", title='" + title + '\'' +
+                ", orderIndex=" + orderIndex +
+                ", text='" + text + '\'' +
+                '}';
+    }
 }

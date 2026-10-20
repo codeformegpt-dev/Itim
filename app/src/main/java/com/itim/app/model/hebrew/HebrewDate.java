@@ -24,12 +24,16 @@ public final class HebrewDate {
     public HebrewDate(int year, int month, int day) {
         if (year < 1)
             throw new IllegalArgumentException("year must be >= 1, got " + year);
-            
         if (month < 1 || month > 14)
             throw new IllegalArgumentException("month must be 1-14, got " + month);
 
-        if (day < 1 || day > 30)
-            throw new IllegalArgumentException("day must be 1-30, got " + day);
+        boolean isLeapYear =isLeapYear(year);
+        if (isLeapYear ? month == 12 : month >= 13)
+            throw new IllegalArgumentException("month " + month + " invalid for " + (isLeapYear ? "leap year" : "non leap year") + ":" + year);
+
+        int lengthOfMonth = lengthOfMonth(year, month);
+        if (day < 1 || day > lengthOfMonth)
+            throw new IllegalArgumentException("day must be 1-" + lengthOfMonth + ", got " + day);
 
         this.year = year;
         this.month = month;

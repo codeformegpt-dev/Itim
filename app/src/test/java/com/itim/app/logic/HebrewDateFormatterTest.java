@@ -5,7 +5,13 @@ import static org.junit.Assert.*;
 import com.itim.app.model.hebrew.HebrewDate;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
+// HebrewDate משתמש ב-android.icu, ש-Robolectric מספק ב-unit test
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = 35)
 public class HebrewDateFormatterTest {
 
     @Test
@@ -33,8 +39,10 @@ public class HebrewDateFormatterTest {
     public void formatMonth() {
         String[] expected = {"ניסן", "אייר", "סיון", "תמוז", "אב", "אלול", "תשרי",
                 "חשון", "כסלו", "טבת", "שבט", "אדר", "אדר א'", "אדר ב'"};
-        for (int month = 1; month <= 14; month++)
-            assertEquals(expected[month - 1], HebrewDateFormatter.formatMonth(new HebrewDate(5787, month, 1)));
+        for (int month = 1; month <= 14; month++) {
+            int year = month == 12 ? 5785 : 5787; // אדר (12) רק בשנה פשוטה, אדר א'/ב' (13/14) רק במעוברת
+            assertEquals(expected[month - 1], HebrewDateFormatter.formatMonth(new HebrewDate(year, month, 1)));
+        }
     }
 
     @Test

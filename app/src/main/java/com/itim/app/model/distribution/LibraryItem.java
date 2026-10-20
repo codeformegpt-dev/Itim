@@ -1,5 +1,7 @@
 package com.itim.app.model.distribution;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class LibraryItem {
@@ -69,5 +71,16 @@ public final class LibraryItem {
     @Override
     public int hashCode() {
         return Objects.hash(sourceId, label, state, progressPercent);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "LibraryItem{" +
+                "sourceId=" + sourceId +
+                ", label='" + label + '\'' +
+                ", state=" + state +
+                ", progressPercent=" + progressPercent +
+                '}';
     }
 }

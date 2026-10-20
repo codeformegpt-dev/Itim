@@ -43,4 +43,9 @@ public class DailyScheduleTest {
     public void testHashCode() {
         assertEquals(sample().hashCode(), sample().hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("DailySchedule{id=1, sourceId=2, offsetDays=-3, lastCompletedDate=2026-10-18}", sample().toString());
+    }
 }

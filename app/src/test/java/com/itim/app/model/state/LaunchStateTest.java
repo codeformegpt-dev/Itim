@@ -38,4 +38,10 @@ public class LaunchStateTest {
         assertEquals(new LaunchState(1L, Mode.PERSONAL, 1000L).hashCode(),
                 new LaunchState(1L, Mode.PERSONAL, 1000L).hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("LaunchState{id=1, mode=PERSONAL, sourceId=1000}", new LaunchState(1L, Mode.PERSONAL, 1000L).toString());
+        assertEquals("LaunchState{id=1, mode=null, sourceId=null}", new LaunchState(1L, null, null).toString());
+    }
 }

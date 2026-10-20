@@ -46,4 +46,10 @@ public class ComponentTest {
     public void testHashCode() {
         assertEquals(sample().hashCode(), sample().hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("Component{id=5, sourceId=1, parentId=2, orderIndex=7, label='פרק א', text='בראשית ברא'}",
+                sample().toString());
+    }
 }

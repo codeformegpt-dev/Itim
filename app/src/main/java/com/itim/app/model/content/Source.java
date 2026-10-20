@@ -5,6 +5,8 @@ import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 @Entity(
         tableName = "source",
         indices  = {@Index(value = "label", unique = true)}
@@ -28,5 +30,26 @@ public final class Source {
     @NonNull
     public String getLabel(){
         return label;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Source that = (Source) o;
+        return id == that.id && Objects.equals(label, that.label);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, label);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Source{" +
+                "id=" + id +
+                ", label='" + label + '\'' +
+                '}';
     }
 }

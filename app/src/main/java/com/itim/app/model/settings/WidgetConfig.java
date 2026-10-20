@@ -2,10 +2,8 @@ package com.itim.app.model.settings;
 
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import com.itim.app.model.content.Source;
@@ -18,15 +16,14 @@ import java.util.Objects;
                 entity = Source.class,
                 parentColumns = "id",
                 childColumns = "sourceId",
-                onDelete = ForeignKey.SET_NULL
+                onDelete = ForeignKey.CASCADE
         )
 )
 public final class WidgetConfig {
 
     @PrimaryKey
     private final int id;
-    @Nullable
-    private final Long sourceId;
+    private final long sourceId;
 
     public WidgetConfig(int id, long sourceId) {
         this.id = id;
@@ -53,6 +50,7 @@ public final class WidgetConfig {
         return Objects.hash(id, sourceId);
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "WidgetConfig{" +

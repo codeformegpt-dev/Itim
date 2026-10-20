@@ -63,4 +63,15 @@ public final class Commentator {
     public int hashCode() {
         return Objects.hash(id, sourceId, name, isBasic);
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Commentator{" +
+                "id=" + id +
+                ", sourceId=" + sourceId +
+                ", name='" + name + '\'' +
+                ", isBasic=" + isBasic +
+                '}';
+    }
 }

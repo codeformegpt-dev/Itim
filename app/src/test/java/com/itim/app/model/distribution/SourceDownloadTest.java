@@ -54,4 +54,10 @@ public class SourceDownloadTest {
     public void testHashCode() {
         assertEquals(sample().hashCode(), sample().hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("SourceDownload{sourceId=1, installedVersion=2, targetVersion=3, totalParts=10, completedParts=4, lastCheckedAt=2026-10-19T08:00:00Z}",
+                sample().toString());
+    }
 }

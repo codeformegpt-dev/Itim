@@ -96,4 +96,17 @@ public final class SourceSchedule {
     public int hashCode() {
         return Objects.hash(id, sourceId, date, startComponentId, endComponentId, title);
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "SourceSchedule{" +
+                "id=" + id +
+                ", sourceId=" + sourceId +
+                ", date=" + date +
+                ", startComponentId=" + startComponentId +
+                ", endComponentId=" + endComponentId +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

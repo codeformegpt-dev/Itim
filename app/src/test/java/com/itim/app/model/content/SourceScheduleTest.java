@@ -46,4 +46,10 @@ public class SourceScheduleTest {
     public void testHashCode() {
         assertEquals(sample().hashCode(), sample().hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("SourceSchedule{id=1, sourceId=2, date=2026-10-19, startComponentId=100, endComponentId=110, title='פרשת לך לך'}",
+                sample().toString());
+    }
 }

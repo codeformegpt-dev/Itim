@@ -33,4 +33,9 @@ public class ProgressTest {
     public void testHashCode() {
         assertEquals(sample().hashCode(), sample().hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("Progress{id=1, mode=DAILY, sourceId=2, componentId=30}", sample().toString());
+    }
 }

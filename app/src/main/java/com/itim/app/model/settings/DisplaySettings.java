@@ -6,24 +6,8 @@ import androidx.room.PrimaryKey;
 
 import java.util.Objects;
 
-@Entity(tableName = "DisplaySettings")
+@Entity(tableName = "displaySettings")
 public final class DisplaySettings {
-
-    public enum FontFamily {
-
-        TAAMEY_FRANK,
-        EZRA,
-        NOTO_SANS
-
-    }
-
-    public enum TextMarks {
-
-        ALL,
-        NIKUD,
-        NONE
-
-    }
 
     public static final int SINGLETON_ID = 1;
     public static final int MIN_FONT_SIZE = 14;
@@ -32,6 +16,10 @@ public final class DisplaySettings {
     public static final int DEFAULT_FONT_SIZE = 20;
     public static final FontFamily DEFAULT_FONT_FAMILY = FontFamily.TAAMEY_FRANK;
     public static final TextMarks DEFAULT_TEXT_MARKS = TextMarks.ALL;
+
+
+    public static DisplaySettings defaults = new DisplaySettings(SINGLETON_ID, DEFAULT_FONT_SIZE, DEFAULT_FONT_FAMILY, DEFAULT_TEXT_MARKS);
+
 
     @PrimaryKey
     private final int id;
@@ -55,13 +43,8 @@ public final class DisplaySettings {
         this.textMarks = textMarks;
     }
 
-    @NonNull
-    public static DisplaySettings defaults() {
-        return new DisplaySettings(SINGLETON_ID, DEFAULT_FONT_SIZE, DEFAULT_FONT_FAMILY, DEFAULT_TEXT_MARKS);
-    }
-
     public static boolean isValidFontSize(int fontSize) {
-        return fontSize >= 20 && fontSize <= 40 && (fontSize - MAX_FONT_SIZE) % FONT_SIZE_STEP == 0;
+        return fontSize >= MIN_FONT_SIZE && fontSize <= MAX_FONT_SIZE && (fontSize - MAX_FONT_SIZE) % FONT_SIZE_STEP == 0;
     }
 
     public int getId() {
@@ -80,6 +63,21 @@ public final class DisplaySettings {
     @NonNull
     public TextMarks getTextMarks() {
         return textMarks;
+    }
+
+    @NonNull
+    public DisplaySettings withFontSize(int fontSize) {
+        return new DisplaySettings(id, fontSize, fontFamily, textMarks);
+    }
+
+    @NonNull
+    public DisplaySettings withFontFamily(@NonNull FontFamily fontFamily) {
+        return new DisplaySettings(id, fontSize, fontFamily, textMarks);
+    }
+
+    @NonNull
+    public DisplaySettings withTextMarks(@NonNull TextMarks textMarks) {
+        return new DisplaySettings(id, fontSize, fontFamily, textMarks);
     }
 
     @Override

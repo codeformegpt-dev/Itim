@@ -62,4 +62,14 @@ public final class LaunchState {
     public int hashCode() {
         return Objects.hash(id, mode, sourceId);
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "LaunchState{" +
+                "id=" + id +
+                ", mode=" + mode +
+                ", sourceId=" + sourceId +
+                '}';
+    }
 }

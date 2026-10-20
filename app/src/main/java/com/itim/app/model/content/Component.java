@@ -42,7 +42,7 @@ public final class Component {
     @Nullable
     private final String text;
 
-    public Component(long id, long sourceId, @Nullable Long parentId, int orderIndex, @Nullable String label, @Nullable String text){
+    public Component(long id, long sourceId, @Nullable Long parentId, int orderIndex, @NonNull String label, @Nullable String text){
         this.id = id;
         this.sourceId = sourceId;
         this.parentId = parentId;
@@ -89,5 +89,18 @@ public final class Component {
     @Override
     public int hashCode() {
         return Objects.hash(id, sourceId, parentId, orderIndex, label, text);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Component{" +
+                "id=" + id +
+                ", sourceId=" + sourceId +
+                ", parentId=" + parentId +
+                ", orderIndex=" + orderIndex +
+                ", label='" + label + '\'' +
+                ", text='" + text + '\'' +
+                '}';
     }
 }

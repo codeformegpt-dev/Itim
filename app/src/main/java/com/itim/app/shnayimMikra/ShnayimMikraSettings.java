@@ -3,7 +3,7 @@ package com.itim.app.shnayimMikra;
 import androidx.annotation.CheckResult;
 import androidx.annotation.NonNull;
 
-import com.itim.app.model.settings.DisplaySettings;
+import com.itim.app.model.settings.FontFamily;
 
 import java.util.Objects;
 
@@ -30,7 +30,7 @@ final class ShnayimMikraSettings {
     private static final boolean DEFAULT_REPEAT_LAST_VERSE = true;
     private static final boolean DEFAULT_TRIPLE_VERSES = true;
     private static final int DEFAULT_TARGUM_FONT_SIZE = 18;
-    private static final DisplaySettings.FontFamily DEFAULT_TARGUM_FONT = DisplaySettings.FontFamily.NOTO_SANS;
+    private static final FontFamily DEFAULT_TARGUM_FONT = FontFamily.NOTO_SANS;
 
     static final ShnayimMikraSettings DEFAULT = new ShnayimMikraSettings(DEFAULT_MIKRA, DEFAULT_TARGUM, DEFAULT_Placement, DEFAULT_REPEAT_LAST_VERSE, DEFAULT_TRIPLE_VERSES, DEFAULT_TARGUM_FONT_SIZE, DEFAULT_TARGUM_FONT);
 
@@ -40,9 +40,9 @@ final class ShnayimMikraSettings {
     private final boolean repeatLastVerse;
     private final boolean tripleVerses;
     private final int targumFontSize;
-    private final DisplaySettings.FontFamily targumFont;
+    private final FontFamily targumFont;
 
-    private ShnayimMikraSettings(Mikra mikra, Targum targum, Placement placement, boolean repeatLastVerse, boolean tripleVerses, int targumFontSize, DisplaySettings.FontFamily targumFont) {
+    private ShnayimMikraSettings(Mikra mikra, Targum targum, Placement placement, boolean repeatLastVerse, boolean tripleVerses, int targumFontSize, FontFamily targumFont) {
         this.mikra = mikra;
         this.targum = targum;
         this.placement = placement;
@@ -84,7 +84,7 @@ final class ShnayimMikraSettings {
     }
     @NonNull
     @CheckResult
-    ShnayimMikraSettings withTargumFont(DisplaySettings.FontFamily font) {
+    ShnayimMikraSettings withTargumFont(FontFamily font) {
         return new ShnayimMikraSettings(mikra, targum, placement, repeatLastVerse, tripleVerses, targumFontSize, font);
     }
 
@@ -112,7 +112,7 @@ final class ShnayimMikraSettings {
         return targumFontSize;
     }
 
-    public DisplaySettings.FontFamily getTargumFont() {
+    public FontFamily getTargumFont() {
         return targumFont;
     }
 

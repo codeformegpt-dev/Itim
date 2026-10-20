@@ -84,4 +84,10 @@ public class LibraryItemTest {
         assertEquals(LibraryItem.of(1L, "x", download(null, 1, 4, 2), true).hashCode(),
                 LibraryItem.of(1L, "x", download(null, 1, 4, 2), true).hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("LibraryItem{sourceId=1, label='x', state=DOWNLOADING, progressPercent=50}",
+                LibraryItem.of(1L, "x", download(null, 1, 4, 2), true).toString());
+    }
 }

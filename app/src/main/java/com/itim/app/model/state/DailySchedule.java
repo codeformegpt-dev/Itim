@@ -1,6 +1,7 @@
 package com.itim.app.model.state;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -23,7 +24,7 @@ import java.util.Objects;
         indices = @Index("sourceId")
 )
 public final class DailySchedule {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private final long id;
     private final long sourceId;
     private final int offsetDays;
@@ -64,6 +65,17 @@ public final class DailySchedule {
     @Override
     public int hashCode() {
         return Objects.hash(id, sourceId, offsetDays, lastCompletedDate);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "DailySchedule{" +
+                "id=" + id +
+                ", sourceId=" + sourceId +
+                ", offsetDays=" + offsetDays +
+                ", lastCompletedDate=" + lastCompletedDate +
+                '}';
     }
 
 

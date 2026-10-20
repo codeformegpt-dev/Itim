@@ -34,4 +34,9 @@ public class CommentatorTest {
     public void testHashCode() {
         assertEquals(sample().hashCode(), sample().hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("Commentator{id=1, sourceId=10, name='רש\"י', isBasic=true}", sample().toString());
+    }
 }

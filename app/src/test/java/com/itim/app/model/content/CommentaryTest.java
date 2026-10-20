@@ -44,4 +44,10 @@ public class CommentaryTest {
     public void testHashCode() {
         assertEquals(sample().hashCode(), sample().hashCode());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("Commentary{id=1, componentId=10, commentatorId=20, title='פסוק א', orderIndex=3, text='טקסט הפירוש'}",
+                sample().toString());
+    }
 }

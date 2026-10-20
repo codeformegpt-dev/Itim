@@ -1,6 +1,7 @@
 package com.itim.app.model.state;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
@@ -33,13 +34,14 @@ import java.util.Objects;
         }
 )
 public final class Progress {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private final long id;
+    @NonNull
     private final Mode mode;
     private final long sourceId;
     private final long componentId;
 
-    public Progress(long id, Mode mode, long sourceId, long componentId) {
+    public Progress(long id, @NonNull Mode mode, long sourceId, long componentId) {
         this.id = id;
         this.mode = mode;
         this.sourceId = sourceId;
@@ -50,6 +52,7 @@ public final class Progress {
         return id;
     }
 
+    @NonNull
     public Mode getMode() {
         return mode;
     }
@@ -72,5 +75,16 @@ public final class Progress {
     @Override
     public int hashCode() {
         return Objects.hash(id, mode, sourceId, componentId);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Progress{" +
+                "id=" + id +
+                ", mode=" + mode +
+                ", sourceId=" + sourceId +
+                ", componentId=" + componentId +
+                '}';
     }
 }

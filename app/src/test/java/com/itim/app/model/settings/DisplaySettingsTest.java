@@ -2,8 +2,6 @@ package com.itim.app.model.settings;
 
 import static org.junit.Assert.*;
 
-import com.itim.app.model.settings.DisplaySettings.FontFamily;
-import com.itim.app.model.settings.DisplaySettings.TextMarks;
 
 import org.junit.Test;
 
@@ -13,7 +11,7 @@ public class DisplaySettingsTest {
 
     @Test
     public void defaults() {
-        DisplaySettings d = DisplaySettings.defaults();
+        DisplaySettings d = DisplaySettings.defaults;
         assertEquals(DisplaySettings.SINGLETON_ID, d.getId());
         assertEquals(DisplaySettings.DEFAULT_FONT_SIZE, d.getFontSize());
         assertEquals(DisplaySettings.DEFAULT_FONT_FAMILY, d.getFontFamily());
@@ -79,12 +77,39 @@ public class DisplaySettingsTest {
 
     @Test
     public void testHashCode() {
-        assertEquals(DisplaySettings.defaults().hashCode(), DisplaySettings.defaults().hashCode());
+        assertEquals(new DisplaySettings(ID, 24, FontFamily.NOTO_SANS, TextMarks.NONE).hashCode(),
+                new DisplaySettings(ID, 24, FontFamily.NOTO_SANS, TextMarks.NONE).hashCode());
+    }
+
+    @Test
+    public void withFontSizeChangesOnlyFontSize() {
+        DisplaySettings d = DisplaySettings.defaults.withFontSize(30);
+        assertEquals(new DisplaySettings(ID, 30, DisplaySettings.DEFAULT_FONT_FAMILY, DisplaySettings.DEFAULT_TEXT_MARKS), d);
+        assertEquals(DisplaySettings.DEFAULT_FONT_SIZE, DisplaySettings.defaults.getFontSize());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void withFontSizeRejectsInvalidFontSize() {
+        DisplaySettings.defaults.withFontSize(21);
+    }
+
+    @Test
+    public void withFontFamilyChangesOnlyFontFamily() {
+        DisplaySettings d = DisplaySettings.defaults.withFontFamily(FontFamily.EZRA);
+        assertEquals(new DisplaySettings(ID, DisplaySettings.DEFAULT_FONT_SIZE, FontFamily.EZRA, DisplaySettings.DEFAULT_TEXT_MARKS), d);
+        assertEquals(DisplaySettings.DEFAULT_FONT_FAMILY, DisplaySettings.defaults.getFontFamily());
+    }
+
+    @Test
+    public void withTextMarksChangesOnlyTextMarks() {
+        DisplaySettings d = DisplaySettings.defaults.withTextMarks(TextMarks.NONE);
+        assertEquals(new DisplaySettings(ID, DisplaySettings.DEFAULT_FONT_SIZE, DisplaySettings.DEFAULT_FONT_FAMILY, TextMarks.NONE), d);
+        assertEquals(DisplaySettings.DEFAULT_TEXT_MARKS, DisplaySettings.defaults.getTextMarks());
     }
 
     @Test
     public void testToString() {
         assertEquals("DisplaySettings{id=1, fontSize=20, fontFamily=TAAMEY_FRANK, textMarks=ALL}",
-                DisplaySettings.defaults().toString());
+                DisplaySettings.defaults.toString());
     }
 }
