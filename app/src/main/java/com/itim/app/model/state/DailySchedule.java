@@ -4,23 +4,14 @@ package com.itim.app.model.state;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
-import com.itim.app.model.content.Source;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity(
-        tableName = "dailySchedule",
-        foreignKeys = @ForeignKey(
-                        entity = Source.class,
-                        parentColumns = "id",
-                        childColumns = "sourceId",
-                        onDelete = ForeignKey.CASCADE
-                    ),
+        tableName = "daily_schedule",
         indices = @Index("sourceId")
 )
 public final class DailySchedule {

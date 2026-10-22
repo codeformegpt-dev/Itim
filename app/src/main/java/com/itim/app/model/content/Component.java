@@ -12,11 +12,12 @@ import java.util.Objects;
 
 @Entity(
         tableName   = "component",
-        foreignKeys = {@ForeignKey(
-                        entity = Source.class,
-                        parentColumns = "id",
-                        childColumns = "sourceId",
-                        onDelete = ForeignKey.CASCADE
+        foreignKeys = {
+                        @ForeignKey(
+                            entity = Source.class,
+                            parentColumns = "id",
+                            childColumns = "sourceId",
+                            onDelete = ForeignKey.CASCADE
         ),
                         @ForeignKey(
                                 entity = Component.class,

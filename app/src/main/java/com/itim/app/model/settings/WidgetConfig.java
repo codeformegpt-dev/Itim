@@ -3,21 +3,14 @@ package com.itim.app.model.settings;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
-import com.itim.app.model.content.Source;
 
 import java.util.Objects;
 
 @Entity(
-        tableName = "widgetConfig",
-        foreignKeys = @ForeignKey(
-                entity = Source.class,
-                parentColumns = "id",
-                childColumns = "sourceId",
-                onDelete = ForeignKey.CASCADE
-        )
+        tableName = "widget_config",
+        indices = @Index("sourceId")
 )
 public final class WidgetConfig {
 

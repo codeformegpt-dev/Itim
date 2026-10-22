@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity(
-        tableName = "sourceSchedule",
+        tableName = "source_schedule",
         foreignKeys = {
                         @ForeignKey(
                                     entity = Source.class,
@@ -35,7 +35,9 @@ import java.util.Objects;
         },
         indices = {
                 @Index(value = {"sourceId", "date"}, unique = true),
-                @Index("title")
+                @Index("title"),
+                @Index("startComponentId"),
+                @Index("endComponentId")
         }
 )
 public final class SourceSchedule {

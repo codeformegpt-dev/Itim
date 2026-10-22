@@ -3,31 +3,13 @@ package com.itim.app.model.state;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
-import com.itim.app.model.content.Component;
-import com.itim.app.model.content.Source;
 
 import java.util.Objects;
 
 @Entity(
         tableName = "progress",
-        foreignKeys = {
-                @ForeignKey(
-                        entity = Source.class,
-                        parentColumns = "id",
-                        childColumns = "sourceId",
-                        onDelete = ForeignKey.CASCADE
-                ),
-                @ForeignKey(
-                        entity = Component.class,
-                        parentColumns = "id",
-                        childColumns = "componentId",
-                        onDelete = ForeignKey.SET_NULL
-                )
-        },
         indices = {
                 @Index(value = {"mode", "sourceId"}, unique = true),
                 @Index("componentId")

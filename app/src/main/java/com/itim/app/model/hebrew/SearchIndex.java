@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.Objects;
 
-@Entity(tableName = "searchIndex")
+@Entity(tableName = "search_index")
 @Fts4
 public final class SearchIndex {
 

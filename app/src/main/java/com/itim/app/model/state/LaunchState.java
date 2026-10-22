@@ -4,21 +4,13 @@ package com.itim.app.model.state;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
-import com.itim.app.model.content.Source;
 
 import java.util.Objects;
 
 @Entity(
-        tableName = "launchState",
-        foreignKeys = @ForeignKey(
-                entity = Source.class,
-                parentColumns = "id",
-                childColumns = "sourceId"
-        ),
+        tableName = "launch_state",
         indices = @Index("sourceId")
 
 )

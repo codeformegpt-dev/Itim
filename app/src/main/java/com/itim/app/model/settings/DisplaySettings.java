@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.Objects;
 
-@Entity(tableName = "displaySettings")
+@Entity(tableName = "display_settings")
 public final class DisplaySettings {
 
     public static final int SINGLETON_ID = 1;
