@@ -34,6 +34,7 @@ import java.util.Objects;
                 )
         },
         indices = {
+                @Index(value = {"id", "sourceId"}, unique = true),
                 @Index(value = {"sourceId", "date"}, unique = true),
                 @Index("title"),
                 @Index("startComponentId"),
