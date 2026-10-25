@@ -218,7 +218,7 @@ erDiagram
 
 | חבילה | השאלה שהיא עונה עליה | מחלקות |
 |---|---|---|
-| `content` | מה לומדים | `Source`, `Component`, `Commentator`, `Commentary`, `SourceSchedule` |
+| `content` | מה לומדים | `Source`, `Component`, `Commentator`, `Commentary`, `SchedulePortion` |
 | `distribution` | איך התוכן מגיע למכשיר | `SourceDownload`, `LibraryItem`, `ReleaseStatus` |
 | `state` | איפה הלומד נמצא | `Progress`, `DailySchedule`, `LaunchState`, `DownloadSourceRecord`, `DailyStatus`, `Mode` |
 | `settings` | איך הטקסט מוצג | `DisplaySettings`, `WidgetConfig`, `FontFamily`, `TextMarks` |

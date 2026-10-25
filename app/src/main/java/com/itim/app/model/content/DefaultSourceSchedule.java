@@ -19,9 +19,10 @@ import java.util.Objects;
                     onDelete = ForeignKey.CASCADE
                 ),
                 @ForeignKey(
-                        entity = SourceSchedule.class,
-                        parentColumns = {"id", "sourceId"},
-                        childColumns = {"sourceId", "sourceScheduleId"}
+                        entity = SchedulePortion.class,
+                        parentColumns = {"sourceId", "id"},
+                        childColumns = {"sourceId", "sourceScheduleId"},
+                        onDelete = ForeignKey.CASCADE
                 )
         },
         indices = @Index(value = {"sourceId", "sourceScheduleId"}, unique = true)
