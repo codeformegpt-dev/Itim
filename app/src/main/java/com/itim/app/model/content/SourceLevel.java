@@ -8,7 +8,7 @@ import androidx.room.ForeignKey;
 import java.util.Objects;
 
 @Entity(
-        tableName = "source_level",
+        tableName = "source_levels",
         primaryKeys = {"sourceId", "depth"},
         foreignKeys = @ForeignKey(
                 entity = Source.class,

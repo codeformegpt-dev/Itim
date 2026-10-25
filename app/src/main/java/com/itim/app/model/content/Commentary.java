@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey;
 import java.util.Objects;
 
 @Entity(
-        tableName = "commentary",
+        tableName = "commentaries",
         foreignKeys = {
                         @ForeignKey(
                                 entity = Component.class,

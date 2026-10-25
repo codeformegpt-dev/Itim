@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity(
-        tableName = "end_date_pace",
+        tableName = "end_date_paces",
         foreignKeys = @ForeignKey(
                 entity = DailySchedule.class,
                 parentColumns = "id",

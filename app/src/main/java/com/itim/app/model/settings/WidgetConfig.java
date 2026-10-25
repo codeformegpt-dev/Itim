@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 import java.util.Objects;
 
 @Entity(
-        tableName = "widget_config",
+        tableName = "widget_configs",
         indices = @Index("sourceId")
 )
 public final class WidgetConfig {

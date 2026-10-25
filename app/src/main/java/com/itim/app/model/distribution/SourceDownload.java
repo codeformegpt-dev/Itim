@@ -13,7 +13,7 @@ import java.time.Instant;
 import java.util.Objects;
 
 @Entity(
-        tableName = "source_download",
+        tableName = "source_downloads",
         foreignKeys = @ForeignKey(
                         entity = Source.class,
                         parentColumns = "id",

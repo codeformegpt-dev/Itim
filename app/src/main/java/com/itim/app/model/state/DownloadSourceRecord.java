@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.Objects;
 
-@Entity(tableName = "download_source_record")
+@Entity(tableName = "download_source_records")
 public final class DownloadSourceRecord {
 
     @PrimaryKey

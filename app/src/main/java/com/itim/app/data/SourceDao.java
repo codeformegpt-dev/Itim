@@ -15,11 +15,11 @@ public interface SourceDao {
     void insert(Source source);
 
     @Nullable
-    @Query("SELECT * FROM source WhERE id = :id")
+    @Query("SELECT * FROM sources WhERE id = :id")
     Source getById(long id);
 
     @Nullable
-    @Query( "SELECT * FROM source ORDER BY id")
+    @Query( "SELECT * FROM sources ORDER BY id")
     List<Source> getAll();
 
 }

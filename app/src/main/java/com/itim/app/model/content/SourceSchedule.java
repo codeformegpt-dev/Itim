@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey;
 import java.util.Objects;
 
 @Entity(
-        tableName = "source_schedule",
+        tableName = "source_schedules",
         foreignKeys = @ForeignKey(
                 entity = Source.class,
                 parentColumns = "id",

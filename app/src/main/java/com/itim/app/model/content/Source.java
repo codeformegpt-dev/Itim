@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 import java.util.Objects;
 
 @Entity(
-        tableName = "source",
+        tableName = "sources",
         indices  = {@Index(value = "label", unique = true)}
 )
 public final class Source {

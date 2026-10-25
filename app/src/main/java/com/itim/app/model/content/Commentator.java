@@ -7,9 +7,8 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.util.Objects;
-//לא כללנו את targumRole משתי סיבות: 1. זה לא נכון. השדות שמגדירים מפרש על ספר לא כוללים אם הוא רש"י או אונקלוס! הם כוללים שם, ID ועוד אבל דבר כז, מה הוא מבין שתי אפשרויות שממש לא רלוונטיות לרוב המוחלט של המפ]רשים, לא יכול להיות שדה אצל כל מפרש. נוסף לכך, 2. יהיו המוני מפרשים ולא הגיוני שכולם יהיו עם שדה ריק. רק בשביל שני מפרשים על מקור אחד שיהיו עם מלא. צריך למצוא פתרון אחר אבל לכאן זה לא נכנס השדה הזה.
 @Entity(
-        tableName = "commentator",
+        tableName = "commentators",
         foreignKeys = @ForeignKey(
                         entity = Source.class,
                         parentColumns = "id",

@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 import java.util.Objects;
 
 @Entity(
-        tableName = "fixed_pace",
+        tableName = "fixed_paces",
         foreignKeys = @ForeignKey(
                 entity = DailySchedule.class,
                 parentColumns = "id",

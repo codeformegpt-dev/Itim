@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity(
-        tableName = "daily_schedule",
+        tableName = "daily_schedules",
         indices = @Index("sourceId")
 )
 public final class DailySchedule {

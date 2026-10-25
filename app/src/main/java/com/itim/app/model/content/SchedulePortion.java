@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity(
-        tableName = "schedule_portion",
+        tableName = "schedule_portions",
         foreignKeys = {
                         @ForeignKey(
                                     entity = SourceSchedule.class,

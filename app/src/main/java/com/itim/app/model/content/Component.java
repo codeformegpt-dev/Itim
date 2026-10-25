@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey;
 import java.util.Objects;
 
 @Entity(
-        tableName   = "component",
+        tableName   = "components",
         foreignKeys = {
                         @ForeignKey(
                             entity = Source.class,
