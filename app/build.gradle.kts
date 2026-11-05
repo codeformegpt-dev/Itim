@@ -49,8 +49,15 @@ dependencies {
     implementation(libs.material)
     implementation(libs.room.common)
     implementation(libs.room.runtime)
+
+    implementation("androidx.room:room-guava:$roomVersion")
+    implementation("com.google.guava:guava:33.8.0-android")
+
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
+    testImplementation("androidx.test:core:1.7.0")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
     annotationProcessor(libs.room.compiler)

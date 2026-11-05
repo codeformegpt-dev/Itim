@@ -102,7 +102,7 @@ public final class SchedulePortion {
     @NonNull
     @Override
     public String toString() {
-        return "SourceSchedule{" +
+        return "SchedulePortion{" +
                 "id=" + id +
                 ", scheduleId=" + scheduleId +
                 ", date=" + date +
