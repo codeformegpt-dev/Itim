@@ -8,7 +8,6 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 
-import com.google.common.util.concurrent.ListenableFuture;
 import com.itim.app.model.content.Commentary;
 import com.itim.app.model.content.Commentator;
 import com.itim.app.model.content.Component;
@@ -24,45 +23,45 @@ import java.util.List;
 public  abstract class InstallDao {
 
     @Insert
-    public abstract void insertCommentators(List<Commentator> rows);
+    public abstract void insertCommentators(@NonNull List<Commentator> rows);
     @Insert
-    public abstract void insertComponents(List<Component> rows);
+    public abstract void insertComponents(@NonNull List<Component> rows);
     @Insert
-    public abstract void insertCommentaries(List<Commentary> rows);
+    public abstract void insertCommentaries(@NonNull List<Commentary> rows);
     @Insert
-    public abstract void insertLevels(List<SourceLevel> rows);
+    public abstract void insertLevels(@NonNull List<SourceLevel> rows);
     @Insert
-    public abstract void insertSchedules(List<SourceSchedule> rows);
+    public abstract void insertSchedules(@NonNull List<SourceSchedule> rows);
     @Insert
-    public abstract void insertPortions(List<SchedulePortion> rows);
+    public abstract void insertPortions(@NonNull List<SchedulePortion> rows);
     @Insert
-    public abstract void insertDefaultSchedule(List<DefaultSourceSchedule> rows);
+    public abstract void insertDefaultSchedule(@NonNull DefaultSourceSchedule row);
     @Insert
-    public abstract void insertSearchIndex(List<SearchIndex> rows);
+    public abstract void insertSearchIndex(@NonNull List<SearchIndex> rows);
 
     @Query("UPDATE source_downloads "
-            + "SET installedVersion  = targetVersion, targetVersion = NULL, totalParts = NULL,  completedParts = NUlL "
+            + "SET installedVersion  = targetVersion, targetVersion = NULL, totalParts = NULL, completedParts = NULL "
             + "WHERE sourceId = :sourceId")
-    public abstract void updateInstallVersion(long sourceId);
+    public abstract void updateInstalledVersion(long sourceId);
 
     @Transaction
     public void deleteInstalledSource(long sourceId){
         deleteSearchIndexOfSource(sourceId);
-        deleteScheduleOfSource(sourceId);
+        deleteSchedulesOfSource(sourceId);
         deleteSource(sourceId);
     }
 
     @Query("DELETE FROM search_index "
             + "WHERE rowid IN "
             + "(SELECT id FROM components WHERE sourceId = :sourceId)")
-    public abstract void deleteSearchIndexOfSource(long sourceId);
+    abstract void deleteSearchIndexOfSource(long sourceId);
 
     @Query("DELETE FROM source_schedules "
             + "WHERE sourceId = :sourceId")
-    public abstract void deleteScheduleOfSource(long sourceId);
+    abstract void deleteSchedulesOfSource(long sourceId);
 
     @Query("DELETE FROM sources "
             + "WHERE id = :sourceId")
-    public abstract void deleteSource(long sourceId);
+    abstract void deleteSource(long sourceId);
 
 }

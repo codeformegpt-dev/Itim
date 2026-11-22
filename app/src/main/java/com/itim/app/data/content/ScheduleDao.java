@@ -15,14 +15,16 @@ import java.util.List;
 public interface  ScheduleDao {
 
 
-    @Query("SELECT p.scheduleId, p.date, p.startComponentId, p.endComponentId, p.title, sc.orderIndex AS startOrderIndex, sc.label AS startLabel, ec.orderIndex AS endOrderIndex, ec.label AS endLabel "
+    @Query("SELECT p.id, p.scheduleId, p.date, p.startComponentId, p.endComponentId, p.title, " +
+            "sc.orderIndex AS startOrderIndex, sc.label AS startLabel, " +
+            "ec.orderIndex AS endOrderIndex, ec.label AS endLabel "
             + "FROM schedule_portions AS p "
             + "INNER JOIN components AS sc ON sc.id = p.startComponentId "
             + "INNER JOIN components AS ec ON ec.id = p.endComponentId "
             + "WHERE p.scheduleId = :scheduleId "
             + "AND p.date = :date")
     @NonNull
-    ListenableFuture<PortionWithBounds> getPortion(long scheduleId, LocalDate date);
+    ListenableFuture<PortionWithBounds> getPortion(long scheduleId, @NonNull LocalDate date);
 
     @Query("SELECT date "
             + "FROM schedule_portions "
@@ -30,7 +32,7 @@ public interface  ScheduleDao {
             + "AND date BETWEEN :fromDate AND :toDate "
             + "ORDER BY date")
     @NonNull
-    ListenableFuture<List<LocalDate>> getPortionDates(long scheduleId, LocalDate fromDate, LocalDate toDate);
+    ListenableFuture<List<LocalDate>> getPortionDates(long scheduleId, @NonNull LocalDate fromDate, @NonNull LocalDate toDate);
 
     @Query("SELECT MIN(date) "
             + "FROM schedule_portions "

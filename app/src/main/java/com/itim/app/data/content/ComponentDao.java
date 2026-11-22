@@ -43,6 +43,20 @@ public interface ComponentDao {
             + "ORDER BY orderIndex "
             + "LIMIT 1")
     @NonNull
-    ListenableFuture<Component> getFirstFrom(long sourceId, int fromOrderIndex);
+    ListenableFuture<Component> getFirstLeafFrom(long sourceId, int fromOrderIndex);
+
+    @Query("SELECT * " +
+            "FROM components " +
+            "WHERE text IS NULL " +
+            "AND sourceId IN (SELECT sourceId FROM source_downloads WHERE installedVersion IS NOT NULL) " +
+            "ORDER BY sourceId, orderIndex")
+    @NonNull
+    ListenableFuture<List<Component>> getInstalledNonLeafComponents();
+
+    @Query("SELECT id, parentId, orderIndex, label, text IS NOT NULL AS isLeaf " +
+            "FROM components " +
+            "WHERE sourceId = :sourceId " +
+            "ORDER BY orderIndex")
+    ListenableFuture<List<ComponentOutline>> getComponentOutline(long sourceId);
 
 }

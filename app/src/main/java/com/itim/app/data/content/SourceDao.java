@@ -61,7 +61,7 @@ public abstract class SourceDao {
             + "SET completedParts = :completedParts "
             + "WHERE sourceId = :sourceId")
     @NonNull
-    public abstract ListenableFuture<Void> UpdateCompletedParts(long sourceId, int completedParts);
+    public abstract ListenableFuture<Void> updateCompletedParts(long sourceId, int completedParts);
 
     @Query("DELETE FROM sources "
             + "WHERE id = :sourceId "

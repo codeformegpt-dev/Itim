@@ -18,7 +18,7 @@ public interface SearchDao {
             + "FROM sources "
             + "WHERE id IN (SELECT sourceId FROM source_downloads WHERE installedVersion IS NOT NULL) "
             + "AND EXISTS ("
-            + "SELECT 1"
+            + "SELECT 1 "
             + "FROM search_index "
             + "WHERE rowid = ("
             + "SELECT c.id "

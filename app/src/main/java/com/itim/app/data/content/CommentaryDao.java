@@ -14,7 +14,7 @@ public interface CommentaryDao {
 
     @Query("SELECT cy.id, cy.componentId, cy.commentatorId, cy.title, cy.orderIndex, cy.text, ct.name AS commentatorName "
             + "FROM commentaries AS cy "
-            + "INNER JOIN commentators AS ct ON ct.id = cy.id "
+            + "INNER JOIN commentators AS ct ON ct.id = cy.commentatorId "
             + "WHERE cy.componentId = :componentId "
             + "ORDER BY cy.orderIndex")
     @NonNull

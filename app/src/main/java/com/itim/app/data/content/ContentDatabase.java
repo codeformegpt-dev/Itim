@@ -1,7 +1,10 @@
 package com.itim.app.data.content;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.room.Database;
+import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
@@ -20,15 +23,44 @@ import com.itim.app.model.hebrew.SearchIndex;
 
 
 @Database(
-        entities = {Commentary.class, Commentator.class, Component.class, DefaultSourceSchedule.class, SchedulePortion.class, Source.class, SourceLevel.class, SourceSchedule.class, SourceDownload.class, SearchIndex.class},
-        version = 1)
+        entities = {Source.class, Component.class, Commentator.class, Commentary.class, SourceSchedule.class, SchedulePortion.class, DefaultSourceSchedule.class, SourceLevel.class, SourceDownload.class, SearchIndex.class},
+        version = 1,
+        exportSchema = true)
 @TypeConverters({LocalDateConverter.class, InstantConverter.class})
 public abstract class ContentDatabase extends RoomDatabase {
+
+    private static volatile ContentDatabase instance;
 
     @NonNull
     public abstract SourceDao sourceDao();
 
     @NonNull
     public abstract ComponentDao componentDao();
+
+    @NonNull
+    public abstract InstallDao installDao();
+
+    @NonNull
+    public abstract SearchDao searchDao();
+
+    @NonNull
+    public abstract ScheduleDao scheduleDao();
+
+    @NonNull
+    public abstract CommentaryDao commentaryDao();
+
+    @NonNull
+    public static ContentDatabase getInstance(@NonNull Context context) {
+        if (instance == null)
+            synchronized (ContentDatabase.class) {
+                if (instance == null )
+                    instance = Room.databaseBuilder(context.getApplicationContext(), ContentDatabase.class, "content.db")
+                            .build();
+            }
+
+        return instance;
+    }
+
+
 
 }

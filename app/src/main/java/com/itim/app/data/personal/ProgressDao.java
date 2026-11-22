@@ -1,5 +1,6 @@
 package com.itim.app.data.personal;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -18,20 +19,25 @@ public abstract class ProgressDao {
     @Query("SELECT * "
             + "FROM progress "
             + "WHERE mode = :mode AND sourceId = :sourceId")
+    @NonNull
     public abstract ListenableFuture<Progress> getProgress(Mode mode, long sourceId);
 
     @Query("SELECT * "
             + "FROM progress "
             + "WHERE mode = :mode AND sourceId = :sourceId")
+    @NonNull
     public abstract LiveData<Progress> observeProgress(Mode mode, long sourceId);
 
     @Query("DELETE FROM progress "
             + "WHERE mode = :mode AND sourceId = :sourceId")
+    @NonNull
     public abstract ListenableFuture<Void> deleteProgress(Mode mode, long sourceId);
 
     @Query("SELECT * "
             + "FROM progress "
-            + "WHERE sourceId = :sourceId")
+            + "WHERE sourceId = :sourceId "
+            + "ORDER BY mode")
+    @NonNull
     public abstract ListenableFuture<List<Progress>> getProgressOfSource(long sourceId);
 
 
@@ -43,7 +49,8 @@ public abstract class ProgressDao {
 
     @Query("UPDATE progress "
             + "SET componentId = :componentId "
-            + "WHERE mode = :mode AND sourceId = :sourceId")
+            + "WHERE mode = :mode " +
+            "AND sourceId = :sourceId")
     abstract int updateProgressComponent(Mode mode, long sourceId, long componentId);
 
     @Insert
