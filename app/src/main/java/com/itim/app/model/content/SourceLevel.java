@@ -57,6 +57,7 @@ public final class SourceLevel {
         return Objects.hash(sourceId, depth, name);
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "SourceLevel{" +

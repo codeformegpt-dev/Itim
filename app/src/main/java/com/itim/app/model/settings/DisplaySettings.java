@@ -18,7 +18,7 @@ public final class DisplaySettings {
     public static final TextMarks DEFAULT_TEXT_MARKS = TextMarks.ALL;
 
 
-    public static DisplaySettings defaults = new DisplaySettings(SINGLETON_ID, DEFAULT_FONT_SIZE, DEFAULT_FONT_FAMILY, DEFAULT_TEXT_MARKS);
+    public static final DisplaySettings defaults = new DisplaySettings(SINGLETON_ID, DEFAULT_FONT_SIZE, DEFAULT_FONT_FAMILY, DEFAULT_TEXT_MARKS);
 
 
     @PrimaryKey

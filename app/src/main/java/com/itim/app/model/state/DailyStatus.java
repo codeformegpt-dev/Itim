@@ -22,7 +22,7 @@ public final class DailyStatus {
     @NonNull
     private final DailyState state;
 
-    public DailyStatus(long sourceId, @NonNull String label, @Nullable String portionTitle, DailyState state) {
+    public DailyStatus(long sourceId, @NonNull String label, @Nullable String portionTitle, @NonNull DailyState state) {
         this.sourceId = sourceId;
         this.label = label;
         this.portionTitle = portionTitle;
@@ -43,6 +43,7 @@ public final class DailyStatus {
         return portionTitle;
     }
 
+    @NonNull
     public DailyState getState() {
         return state;
     }

@@ -19,7 +19,7 @@ import java.util.Objects;
                     onDelete = ForeignKey.CASCADE
                 ),
                 @ForeignKey(
-                        entity = SchedulePortion.class,
+                        entity = SourceSchedule.class,
                         parentColumns = {"sourceId", "id"},
                         childColumns = {"sourceId", "sourceScheduleId"},
                         onDelete = ForeignKey.CASCADE

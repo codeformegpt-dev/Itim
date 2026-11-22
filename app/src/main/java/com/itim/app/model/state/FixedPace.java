@@ -4,6 +4,7 @@ package com.itim.app.model.state;
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.util.Objects;
@@ -15,7 +16,8 @@ import java.util.Objects;
                 parentColumns = "id",
                 childColumns = "dailyScheduleId",
                 onDelete = ForeignKey.CASCADE
-        )
+        ),
+        indices = @Index("SourceSchedule")
 )
 public final class FixedPace implements StudyPace {
 
@@ -23,7 +25,7 @@ public final class FixedPace implements StudyPace {
     private final long dailyScheduleId;
     private final long sourceScheduleId;
 
-    public FixedPace(long sourceScheduleId, long dailyScheduleId) {
+    public FixedPace(long dailyScheduleId, long sourceScheduleId) {
         this.sourceScheduleId = sourceScheduleId;
         this.dailyScheduleId = dailyScheduleId;
     }

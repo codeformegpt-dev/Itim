@@ -1,6 +1,7 @@
 package com.itim.app.model.distribution;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.util.Objects;
 
@@ -14,11 +15,14 @@ public final class LibraryItem {
     }
 
     private final long sourceId;
+    @NonNull
     private final String label;
+    @NonNull
     private final LibraryState state;
+    @Nullable
     private final Integer progressPercent;
 
-    private LibraryItem(long sourceId, String label, LibraryState state, Integer progressPercent) {
+    private LibraryItem(long sourceId, @NonNull String label, @NonNull LibraryState state, @Nullable Integer progressPercent) {
         this.sourceId = sourceId;
         this.label = label;
         this.state = state;
@@ -49,14 +53,17 @@ public final class LibraryItem {
         return sourceId;
     }
 
+    @NonNull
     public String getLabel() {
         return label;
     }
 
+    @NonNull
     public LibraryState getState() {
         return state;
     }
 
+    @Nullable
     public Integer getProgressPercent() {
         return progressPercent;
     }

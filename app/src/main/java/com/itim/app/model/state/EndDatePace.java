@@ -13,18 +13,23 @@ import java.util.Objects;
         foreignKeys = @ForeignKey(
                 entity = DailySchedule.class,
                 parentColumns = "id",
-                childColumns = "dailyScheduleId"
+                childColumns = "dailyScheduleId",
+                onDelete = ForeignKey.CASCADE
         )
 )
 public final class EndDatePace implements StudyPace {
 
     @PrimaryKey
     private final long dailyScheduleId;
+    @NonNull
     private final LocalDate startDate;
+    @NonNull
     private final LocalDate targetEndDate;
 
-    public EndDatePace(long dailyScheduleId, LocalDate startDate, LocalDate targetEndDate) {
+    public EndDatePace(long dailyScheduleId, @NonNull LocalDate startDate, @NonNull LocalDate targetEndDate) {
         this.dailyScheduleId = dailyScheduleId;
+        if (startDate.isAfter(targetEndDate))
+            throw new IllegalArgumentException("startDate must be before targetEndDate. got: startDate - " + startDate + ", targetEndDate - " + targetEndDate);
         this.startDate = startDate;
         this.targetEndDate = targetEndDate;
     }
@@ -34,10 +39,12 @@ public final class EndDatePace implements StudyPace {
         return dailyScheduleId;
     }
 
+    @NonNull
     public LocalDate getStartDate() {
         return startDate;
     }
 
+    @NonNull
     public LocalDate getTargetEndDate() {
         return targetEndDate;
     }

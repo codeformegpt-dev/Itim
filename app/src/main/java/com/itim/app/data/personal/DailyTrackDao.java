@@ -10,7 +10,6 @@ import androidx.room.Transaction;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.itim.app.model.state.DailyAmountPace;
 import com.itim.app.model.state.DailySchedule;
-import com.itim.app.model.state.DailyScheduleWithPace;
 import com.itim.app.model.state.EndDatePace;
 import com.itim.app.model.state.FixedPace;
 

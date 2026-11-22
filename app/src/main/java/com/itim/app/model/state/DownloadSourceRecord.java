@@ -11,33 +11,33 @@ import java.util.Objects;
 public final class DownloadSourceRecord {
 
     @PrimaryKey
-    private final long SourceId;
+    private final long sourceId;
 
     public DownloadSourceRecord(long sourceId) {
-        SourceId = sourceId;
+        this.sourceId = sourceId;
     }
 
     public long getSourceId() {
-        return SourceId;
+        return sourceId;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         DownloadSourceRecord that = (DownloadSourceRecord) o;
-        return SourceId == that.SourceId;
+        return sourceId == that.sourceId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(SourceId);
+        return Objects.hashCode(sourceId);
     }
 
     @NonNull
     @Override
     public String toString() {
         return "DownloadSourceRecord{" +
-                "SourceId=" + SourceId +
+                "sourceId=" + sourceId +
                 '}';
     }
 }
