@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="1200" height="350" role="img" aria-label="המסע של עתים: model הושלמה, data כמעט שם, logic הבא בתור, ViewModel ו-UI מתוכננים">
+  <defs>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="1.6" fill="#e9d5ff"/>
+    </pattern>
+    <linearGradient id="done" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="0.55" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="lift" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#4c1d95" flood-opacity="0.25"/>
+    </filter>
+    <style>
+      .he   { font-family: 'Segoe UI', 'Arial Hebrew', Arial, 'Noto Sans Hebrew', 'Liberation Sans', 'DejaVu Sans', sans-serif; }
+      .code { font-family: 'Cascadia Code', Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', monospace; }
+      .layer { font-size: 25px; font-weight: 700; fill: #1f2937; text-anchor: middle; }
+      .desc  { font-size: 19px; fill: #4b5563; text-anchor: middle; }
+      .chip  { font-size: 16px; font-weight: 700; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect x="2" y="2" width="1196" height="346" rx="28" fill="#ffffff" stroke="#ede9fe" stroke-width="3"/>
+  <rect x="2" y="2" width="1196" height="346" rx="28" fill="url(#dots)"/>
+
+  <!-- the road -->
+  <path id="road" d="M1170 150 L1080 150 C1000 215, 920 85, 840 150 C760 215, 680 85, 600 150 C520 215, 440 85, 360 150 C280 215, 200 85, 120 150 L30 150"
+        fill="none" stroke="#f3e8ff" stroke-width="30" stroke-linecap="round"/>
+  <path d="M840 150 C760 215, 680 85, 600 150 C520 215, 440 85, 360 150 C280 215, 200 85, 120 150 L30 150"
+        fill="none" stroke="#c4b5fd" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.1 22"/>
+  <path id="walked" d="M1170 150 L1080 150 C1000 215, 920 85, 840 150"
+        fill="none" stroke="url(#done)" stroke-width="12" stroke-linecap="round"/>
+  <circle r="8" fill="#ffffff" stroke="#f59e0b" stroke-width="4">
+    <animateMotion dur="3.2s" repeatCount="indefinite" path="M1170 150 L1080 150 C1000 215, 920 85, 840 150"/>
+  </circle>
+
+  <!-- 1 · model : done -->
+  <g filter="url(#lift)">
+    <circle cx="1080" cy="150" r="48" fill="#10b981" stroke="#ffffff" stroke-width="6"/>
+  </g>
+  <path d="M1060 151 l14 14 l28 -30" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 2 · data : in progress -->
+  <circle cx="840" cy="150" r="48" fill="none" stroke="#f59e0b" stroke-width="4">
+    <animate attributeName="r" values="48;74" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0.7;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <g filter="url(#lift)">
+    <circle cx="840" cy="150" r="48" fill="#f59e0b" stroke="#ffffff" stroke-width="6"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round">
+    <ellipse cx="840" cy="128" rx="20" ry="8"/>
+    <path d="M820 128 v44 a20 8 0 0 0 40 0 v-44"/>
+    <path d="M820 143 a20 8 0 0 0 40 0"/>
+    <path d="M820 158 a20 8 0 0 0 40 0"/>
+  </g>
+
+  <!-- 3 · logic : next -->
+  <g filter="url(#lift)">
+    <circle cx="600" cy="150" r="48" fill="#3b82f6" stroke="#ffffff" stroke-width="6"/>
+  </g>
+  <text class="code" x="600" y="162" text-anchor="middle" font-size="36" font-weight="700" fill="#ffffff">{ }</text>
+
+  <!-- 4 · ViewModel : planned -->
+  <g filter="url(#lift)">
+    <circle cx="360" cy="150" r="48" fill="#8b5cf6" stroke="#ffffff" stroke-width="6"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M338 138 h40 l-10 -10"/>
+    <path d="M382 162 h-40 l10 10"/>
+  </g>
+
+  <!-- 5 · UI : planned -->
+  <g filter="url(#lift)">
+    <circle cx="120" cy="150" r="48" fill="#ec4899" stroke="#ffffff" stroke-width="6"/>
+  </g>
+  <rect x="104" y="122" width="32" height="56" rx="7" fill="none" stroke="#ffffff" stroke-width="5"/>
+  <circle cx="120" cy="167" r="3.5" fill="#ffffff"/>
+
+  <!-- finish flag -->
+  <line x1="168" y1="104" x2="168" y2="40" stroke="#6b21a8" stroke-width="4" stroke-linecap="round"/>
+  <path fill="#facc15" stroke="#6b21a8" stroke-width="2.5" stroke-linejoin="round" d="M168 42 C182 36, 192 50, 208 44 L208 70 C192 76, 182 62, 168 68 Z">
+    <animate attributeName="d" dur="1.6s" repeatCount="indefinite"
+      values="M168 42 C182 36, 192 50, 208 44 L208 70 C192 76, 182 62, 168 68 Z;
+              M168 42 C182 50, 192 36, 208 44 L208 70 C192 62, 182 76, 168 68 Z;
+              M168 42 C182 36, 192 50, 208 44 L208 70 C192 76, 182 62, 168 68 Z"/>
+  </path>
+
+  <!-- "we are here" pin -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="1.4s" repeatCount="indefinite"/>
+    <path d="M840 92 C826 74, 818 64, 818 52 a22 22 0 0 1 44 0 C862 64, 854 74, 840 92 Z" fill="#ef4444" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="840" cy="52" r="8" fill="#ffffff"/>
+  </g>
+  <rect x="874" y="34" width="132" height="38" rx="19" fill="#fef2f2" stroke="#fecaca" stroke-width="2"/>
+  <text class="he" x="940" y="60" direction="rtl" text-anchor="middle" font-size="19" font-weight="700" fill="#b91c1c">אנחנו כאן!</text>
+
+  <!-- labels -->
+  <g class="code">
+    <text class="layer" x="1080" y="238">model</text>
+    <text class="layer" x="840" y="238">data</text>
+    <text class="layer" x="600" y="238">logic</text>
+    <text class="layer" x="360" y="238">ViewModel</text>
+    <text class="layer" x="120" y="238">UI</text>
+  </g>
+  <g class="he">
+    <text class="desc" x="1080" y="268" direction="rtl">ישויות ומחלקות ערך</text>
+    <text class="desc" x="840" y="268" direction="rtl">שני מסדים, 11 DAO</text>
+    <text class="desc" x="600" y="268" direction="rtl">חישובים וכללים</text>
+    <text class="desc" x="360" y="268" direction="rtl">הגשר למסכים</text>
+    <text class="desc" x="120" y="268" direction="rtl">מסכים וווידג'ט</text>
+  </g>
+
+  <!-- status chips -->
+  <g class="he">
+    <rect x="1020" y="286" width="120" height="34" rx="17" fill="#d1fae5"/>
+    <text class="chip" x="1080" y="309" direction="rtl" fill="#065f46">הושלמה</text>
+
+    <rect x="780" y="286" width="120" height="34" rx="17" fill="#fef3c7"/>
+    <text class="chip" x="840" y="309" direction="rtl" fill="#92400e">כמעט שם</text>
+
+    <rect x="540" y="286" width="120" height="34" rx="17" fill="#dbeafe"/>
+    <text class="chip" x="600" y="309" direction="rtl" fill="#1e40af">הבא בתור</text>
+
+    <rect x="300" y="286" width="120" height="34" rx="17" fill="#ede9fe"/>
+    <text class="chip" x="360" y="309" direction="rtl" fill="#5b21b6">מתוכנן</text>
+
+    <rect x="60" y="286" width="120" height="34" rx="17" fill="#fce7f3"/>
+    <text class="chip" x="120" y="309" direction="rtl" fill="#9d174d">מתוכנן</text>
+  </g>
+</svg>

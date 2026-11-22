@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 190" width="1200" height="190" role="img" aria-label="עתים – נבנית שורה אחרי שורה">
+  <defs>
+    <linearGradient id="w1" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#312e81"/>
+      <stop offset="0.5" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="w2" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="w3" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#fb923c"/>
+    </linearGradient>
+    <clipPath id="round">
+      <rect width="1200" height="190" rx="28"/>
+    </clipPath>
+    <style>
+      .he    { font-family: 'Segoe UI', 'Arial Hebrew', Arial, 'Noto Sans Hebrew', 'Liberation Sans', 'DejaVu Sans', sans-serif; }
+      .serif { font-family: 'Frank Ruehl CLM', 'David CLM', David, 'Times New Roman', 'Noto Serif Hebrew', Cardo, serif; }
+    </style>
+  </defs>
+  <g clip-path="url(#round)">
+    <!-- back wave -->
+    <path fill="url(#w3)" opacity="0.55" d="M0 40 Q150 10 300 40 T600 40 T900 40 T1200 40 T1500 40 T1800 40 V190 H0 Z">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-600 0" dur="11s" repeatCount="indefinite"/>
+    </path>
+    <!-- middle wave -->
+    <path fill="url(#w2)" opacity="0.7" d="M-300 58 Q-150 30 0 58 T300 58 T600 58 T900 58 T1200 58 T1500 58 T1800 58 V190 H-300 Z">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="600 0" dur="14s" repeatCount="indefinite"/>
+    </path>
+    <!-- front wave -->
+    <path fill="url(#w1)" d="M0 78 Q150 54 300 78 T600 78 T900 78 T1200 78 T1500 78 T1800 78 V190 H0 Z">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-600 0" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <text class="serif" x="600" y="138" text-anchor="middle" direction="rtl" font-size="44" font-weight="700" fill="#ffffff">עִתִּים</text>
+  <text class="he" x="600" y="170" text-anchor="middle" direction="rtl" font-size="19" fill="#fde68a">נבנית קומה אחרי קומה, שורה אחרי שורה</text>
+</svg>

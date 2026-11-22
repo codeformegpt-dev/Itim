@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="עתים – אפליקציית אנדרואיד ללימוד תורה, כל יום">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#312e81"/>
+      <stop offset="0.42" stop-color="#6d28d9"/>
+      <stop offset="0.78" stop-color="#db2777"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <radialGradient id="face" cx="0.5" cy="0.4" r="0.65">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.75" stop-color="#fdf4ff"/>
+      <stop offset="1" stop-color="#fde68a"/>
+    </radialGradient>
+    <linearGradient id="underline" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#fde047"/>
+      <stop offset="0.5" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="38"/>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1e1b4b" flood-opacity="0.45"/>
+    </filter>
+    <clipPath id="card">
+      <rect width="1200" height="420" rx="28"/>
+    </clipPath>
+    <style>
+      .he   { font-family: 'Segoe UI', 'Arial Hebrew', Arial, 'Noto Sans Hebrew', 'Liberation Sans', 'DejaVu Sans', sans-serif; }
+      .serif{ font-family: 'Frank Ruehl CLM', 'David CLM', David, 'Times New Roman', 'Noto Serif Hebrew', Cardo, serif; }
+      .num  { font-family: 'Frank Ruehl CLM', David, 'Times New Roman', 'Noto Serif Hebrew', Cardo, serif; font-size: 27px; font-weight: 700; fill: #4c1d95; text-anchor: middle; dominant-baseline: central; }
+      .letter { font-family: 'Frank Ruehl CLM', David, 'Times New Roman', 'Noto Serif Hebrew', Cardo, serif; fill: #ffffff; fill-opacity: 0.13; font-weight: 700; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="420" fill="url(#sky)"/>
+
+    <!-- soft glows -->
+    <circle cx="300" cy="215" r="190" fill="#f472b6" opacity="0.45" filter="url(#blur)"/>
+    <circle cx="1080" cy="40" r="160" fill="#a78bfa" opacity="0.5" filter="url(#blur)"/>
+    <circle cx="760" cy="430" r="170" fill="#fb923c" opacity="0.45" filter="url(#blur)"/>
+
+    <!-- floating Hebrew letters -->
+    <g class="letter">
+      <text x="560" y="110" font-size="54">א<animateTransform attributeName="transform" type="translate" values="0 0;0 -16;0 0" dur="7s" repeatCount="indefinite"/></text>
+      <text x="640" y="380" font-size="40">ב<animateTransform attributeName="transform" type="translate" values="0 0;0 -12;0 0" dur="6s" begin="1s" repeatCount="indefinite"/></text>
+      <text x="520" y="300" font-size="34">ש<animateTransform attributeName="transform" type="translate" values="0 0;0 -14;0 0" dur="8s" begin="2s" repeatCount="indefinite"/></text>
+      <text x="700" y="80" font-size="30">ת<animateTransform attributeName="transform" type="translate" values="0 0;0 -10;0 0" dur="5s" begin="0.5s" repeatCount="indefinite"/></text>
+      <text x="80" y="90" font-size="38">ל<animateTransform attributeName="transform" type="translate" values="0 0;0 -14;0 0" dur="9s" begin="1.5s" repeatCount="indefinite"/></text>
+      <text x="60" y="370" font-size="46">מ<animateTransform attributeName="transform" type="translate" values="0 0;0 -18;0 0" dur="7.5s" begin="3s" repeatCount="indefinite"/></text>
+      <text x="470" y="200" font-size="28">ד<animateTransform attributeName="transform" type="translate" values="0 0;0 -10;0 0" dur="6.5s" begin="2.5s" repeatCount="indefinite"/></text>
+      <text x="1160" y="400" font-size="36">ה<animateTransform attributeName="transform" type="translate" values="0 0;0 -12;0 0" dur="8.5s" begin="1s" repeatCount="indefinite"/></text>
+    </g>
+
+    <!-- twinkling stars -->
+    <g fill="#ffffff">
+      <circle cx="610" cy="40" r="2.2"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.6s" repeatCount="indefinite"/></circle>
+      <circle cx="760" cy="150" r="1.6"><animate attributeName="opacity" values="1;0.2;1" dur="3.1s" repeatCount="indefinite"/></circle>
+      <circle cx="880" cy="34" r="2.6"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" begin="1s" repeatCount="indefinite"/></circle>
+      <circle cx="1170" cy="120" r="2"><animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/></circle>
+      <circle cx="40" cy="200" r="2.4"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.4s" begin="0.4s" repeatCount="indefinite"/></circle>
+      <circle cx="150" cy="30" r="1.8"><animate attributeName="opacity" values="1;0.2;1" dur="2.8s" repeatCount="indefinite"/></circle>
+      <circle cx="500" cy="380" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.6s" begin="2s" repeatCount="indefinite"/></circle>
+      <circle cx="680" cy="250" r="1.5"><animate attributeName="opacity" values="1;0.2;1" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></circle>
+      <circle cx="960" cy="395" r="2.2"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" begin="0.7s" repeatCount="indefinite"/></circle>
+      <circle cx="560" cy="160" r="1.4"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
+      <path d="M820 92 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.2s" repeatCount="indefinite"/></path>
+      <path d="M455 60 l2.4 6 6 2.4 -6 2.4 -2.4 6 -2.4 -6 -6 -2.4 6 -2.4z"><animate attributeName="opacity" values="1;0.3;1" dur="2.7s" repeatCount="indefinite"/></path>
+    </g>
+
+    <!-- the clock: "עתים" means "times" -->
+    <g>
+      <circle cx="300" cy="210" r="178" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="4 10">
+        <animateTransform attributeName="transform" type="rotate" from="0 300 210" to="360 300 210" dur="60s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="7" fill="#fde047">
+        <animateMotion dur="9s" repeatCount="indefinite" path="M300 32 a178 178 0 1 1 -0.1 0z"/>
+      </circle>
+      <circle cx="300" cy="210" r="150" fill="url(#face)" stroke="#ffffff" stroke-width="7" filter="url(#shadow)"/>
+      <circle cx="300" cy="210" r="132" fill="none" stroke="#c4b5fd" stroke-width="5" stroke-dasharray="1.6 12.22" transform="rotate(-0.7 300 210)"/>
+      <g class="num">
+        <text x="352.0" y="119.9">א</text>
+        <text x="390.1" y="158.0">ב</text>
+        <text x="404.0" y="210.0">ג</text>
+        <text x="390.1" y="262.0">ד</text>
+        <text x="352.0" y="300.1">ה</text>
+        <text x="300.0" y="314.0">ו</text>
+        <text x="248.0" y="300.1">ז</text>
+        <text x="209.9" y="262.0">ח</text>
+        <text x="196.0" y="210.0">ט</text>
+        <text x="209.9" y="158.0">י</text>
+        <text x="248.0" y="119.9">יא</text>
+        <text x="300.0" y="106.0" fill="#db2777">יב</text>
+      </g>
+      <!-- hour hand -->
+      <line x1="300" y1="222" x2="300" y2="152" stroke="#312e81" stroke-width="10" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" from="300 300 210" to="660 300 210" dur="144s" repeatCount="indefinite"/>
+      </line>
+      <!-- minute hand -->
+      <line x1="300" y1="226" x2="300" y2="118" stroke="#db2777" stroke-width="6" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" from="60 300 210" to="420 300 210" dur="12s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="300" cy="210" r="11" fill="#f59e0b" stroke="#ffffff" stroke-width="4"/>
+    </g>
+
+    <!-- tag pill -->
+    <rect x="904" y="44" width="226" height="40" rx="20" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.45"/>
+    <text x="1017" y="70" text-anchor="middle" font-family="'Segoe UI', Arial, 'Liberation Sans', sans-serif" font-size="15" font-weight="700" letter-spacing="2.5" fill="#ffffff">ANDROID · JAVA · ROOM</text>
+
+    <!-- title -->
+    <text class="serif" x="1130" y="232" direction="rtl" text-anchor="start" font-size="150" font-weight="700" fill="#ffffff" filter="url(#shadow)">עִתִּים</text>
+
+    <!-- hand-drawn underline -->
+    <path d="M1130 258 C 1060 246, 1000 270, 930 258 S 830 248, 790 262" fill="none" stroke="url(#underline)" stroke-width="7" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="400;0;0" keyTimes="0;0.35;1" dur="6s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- subtitle -->
+    <text class="he" x="1130" y="314" direction="rtl" text-anchor="start" font-size="34" font-weight="600" fill="#ffffff">אפליקציית אנדרואיד ללימוד תורה, כל יום</text>
+
+    <!-- quote pill -->
+    <rect x="690" y="340" width="440" height="50" rx="25" fill="#1e1b4b" fill-opacity="0.32" stroke="#ffffff" stroke-opacity="0.35"/>
+    <text class="serif" x="1106" y="374" direction="rtl" text-anchor="start" font-size="25" fill="#fef3c7">״קָבַעְתָּ עִתִּים לַתּוֹרָה?״ · שבת לא, א</text>
+  </g>
+</svg>
