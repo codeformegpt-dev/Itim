@@ -7,7 +7,7 @@ import org.junit.Test;
 public class FixedPaceTest {
 
     private static FixedPace sample() {
-        return new FixedPace(7L, 3L);
+        return new FixedPace(3L, 7L);
     }
 
     @Test
@@ -26,8 +26,8 @@ public class FixedPaceTest {
     @Test
     public void testEquals() {
         assertEquals(sample(), sample());
-        assertNotEquals(sample(), new FixedPace(8L, 3L));
-        assertNotEquals(sample(), new FixedPace(7L, 4L));
+        assertNotEquals(sample(), new FixedPace(3L, 8L));
+        assertNotEquals(sample(), new FixedPace(4L, 7L));
         assertNotEquals(sample(), null);
     }
 

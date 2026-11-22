@@ -25,6 +25,6 @@ public class DownloadSourceRecordTest {
 
     @Test
     public void testToString() {
-        assertEquals("DownloadSourceRecord{SourceId=4}", new DownloadSourceRecord(4L).toString());
+        assertEquals("DownloadSourceRecord{sourceId=4}", new DownloadSourceRecord(4L).toString());
     }
 }

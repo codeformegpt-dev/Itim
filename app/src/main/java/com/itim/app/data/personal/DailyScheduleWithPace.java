@@ -21,7 +21,7 @@ public final class DailyScheduleWithPace {
     private final DailySchedule dailySchedule;
 
     @Relation(parentColumn = "id", entityColumn = "dailyScheduleId")
-    @NonNull
+    @Nullable
     private final FixedPace fixedPace;
 
     @Relation(parentColumn = "id", entityColumn = "dailyScheduleId")

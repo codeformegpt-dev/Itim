@@ -17,14 +17,14 @@ public final class PortionWithBounds {
     private final String startLabel;
     private final int endOrderIndex;
     @NonNull
-    private final String endName;
+    private final String endLabel;
 
-    public PortionWithBounds(@NonNull SchedulePortion portion, int startOrderIndex, @NonNull String startLabel, int endOrderIndex, @NonNull String endName) {
+    public PortionWithBounds(@NonNull SchedulePortion portion, int startOrderIndex, @NonNull String startLabel, int endOrderIndex, @NonNull String endLabel) {
         this.portion = portion;
         this.startOrderIndex = startOrderIndex;
         this.startLabel = startLabel;
         this.endOrderIndex = endOrderIndex;
-        this.endName = endName;
+        this.endLabel = endLabel;
     }
 
     @NonNull
@@ -46,19 +46,19 @@ public final class PortionWithBounds {
     }
 
     @NonNull
-    public String getEndName() {
-        return endName;
+    public String getEndLabel() {
+        return endLabel;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         PortionWithBounds that = (PortionWithBounds) o;
-        return startOrderIndex == that.startOrderIndex && endOrderIndex == that.endOrderIndex && Objects.equals(portion, that.portion) && Objects.equals(startLabel, that.startLabel) && Objects.equals(endName, that.endName);
+        return startOrderIndex == that.startOrderIndex && endOrderIndex == that.endOrderIndex && Objects.equals(portion, that.portion) && Objects.equals(startLabel, that.startLabel) && Objects.equals(endLabel, that.endLabel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(portion, startOrderIndex, startLabel, endOrderIndex, endName);
+        return Objects.hash(portion, startOrderIndex, startLabel, endOrderIndex, endLabel);
     }
 }

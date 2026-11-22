@@ -17,7 +17,7 @@ import java.util.Objects;
                 childColumns = "dailyScheduleId",
                 onDelete = ForeignKey.CASCADE
         ),
-        indices = @Index("SourceSchedule")
+        indices = @Index("sourceScheduleId")
 )
 public final class FixedPace implements StudyPace {
 
